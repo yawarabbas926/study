@@ -1,0 +1,79 @@
+<html>
+    <title> web page</title>
+    <form name = "validation">
+
+        <h4>enter cnic</h4>
+        <input type = "text" name = "cnic" id ="txt1">
+        <button onclick ="validateA()"> check</button> <br>
+
+
+        <h4>enter email</h4>
+        <input type = "text" name = "mail" id ="txt2">
+
+        <button onclick ="validateB()"> check</button> <br>
+
+
+        <h4>enter password</h4>
+        <input type = "password" name = "pass" id ="txt3">
+
+        <button onclick ="validateC()"> check</button> <br>
+
+    </form>
+
+    <head>
+        <script>
+            function validateA()
+            {
+                var InStr = document.validation.cnic.value;
+                var t1 = document.getElementById("txt1");
+
+                const patrn = /\d{5}-\d{7}-\d{1}/;
+
+                if (patrn.test(InStr))
+                {
+                    alert("Valid Data");
+                }
+                else
+                {
+                    
+                    alert("Invalid Data");
+                }
+            }
+
+            function validateB()
+            {
+                var InStr = document.validation.mail.value;
+                var t2 = document.getElementById("txt2");
+
+                const patrn=/\w+\d+@gmail.\w{3}/;
+
+                if (patrn.test(InStr))
+                {
+                    alert("Valid email");
+                }
+                else
+                {
+                    alert("Invalid email");
+                }
+            }
+
+            function validateC()
+            {
+                var InStr = document.validation.pass.value;
+                var t3 = document.getElementById("txt3");
+
+                var strpass=document.validation.pass.value;
+				if(strpass.length<8)
+                {
+				alert("password is too short");
+                }
+                
+                
+            }
+        </script>
+    </head>
+    <body>
+        <p>Regular Expression Lab</p>
+
+    </body>
+</html>
